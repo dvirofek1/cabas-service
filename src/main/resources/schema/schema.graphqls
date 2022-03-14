@@ -1,0 +1,33 @@
+schema {
+    query: Query
+    mutation: Mutation
+}
+
+
+type Mutation{
+    #  send alert by area numbers and message format type
+    sendAlert(areaNumbers:[Int]!,messageFormatType:Int):[Request]
+}
+
+type Query{
+    get:String
+}
+
+
+type Request{
+    citizen:Citizen!
+    message:String!
+}
+
+type Citizen{
+    privateId:String
+    firstName:String
+    lastName:String
+    city:String
+    phone:String
+    guardianId:String
+    areaNumber:String
+}
+
+
+
